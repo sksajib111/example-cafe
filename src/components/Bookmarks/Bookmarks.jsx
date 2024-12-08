@@ -2,7 +2,7 @@
 
 const Bookmarks = () => {
   return (
-    <div className="lg:w-1/3 bg-red-500">
+    <div className="w-1/3 bg-sky-200">
       <h2>this is bookmarks</h2>
     </div>
   );

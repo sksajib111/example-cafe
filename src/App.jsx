@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="lg:flex">
+      <div className="flex p-4 mx-auto space-x-4">
       <Blogs></Blogs>
       <Bookmarks></Bookmarks>
       </div>
