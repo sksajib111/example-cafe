@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { FaBookmark} from 'react-icons/fa';
+import { FaBookmark } from "react-icons/fa";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handelAddToBookmark }) => {
   const {
     title,
     cover,
@@ -13,7 +13,11 @@ const Blog = ({ blog }) => {
   } = blog;
   return (
     <div>
-      <img className="w-full rounded-2xl m-2" src={cover} alt={`Cover picture of the title ${title}`} />
+      <img
+        className="w-full rounded-2xl m-2"
+        src={cover}
+        alt={`Cover picture of the title ${title}`}
+      />
       <div className="flex justify-between align-middle">
         <div className="flex">
           <img className="w-14" src={author_img} alt="" />
@@ -24,19 +28,29 @@ const Blog = ({ blog }) => {
         </div>
         <div>
           <span>{reading_time} min read</span>
-          <button className="ml-2 text-red-600 text-2xl"><FaBookmark /></button>
+          <button
+            className="ml-2 text-red-600 text-2xl"
+            onClick={() => handelAddToBookmark(blog)}
+          >
+            <FaBookmark />
+          </button>
         </div>
       </div>
       <h2 className="text-4xl">{title}</h2>
-      <p>{
-        hashtags.map((hash, idx) => <span key={idx}><a href="">#{hash}</a></span>)
-        }</p>
+      <p>
+        {hashtags.map((hash, idx) => (
+          <span key={idx}>
+            <a href="">#{hash}</a>
+          </span>
+        ))}
+      </p>
     </div>
   );
 };
 
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
+  handelAddToBookmark: PropTypes.func,
 };
 
 export default Blog;
