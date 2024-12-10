@@ -42,7 +42,7 @@ const Blog = ({ blog, handelAddToBookmark, handelMarkAsRead }) => {
           <span key={idx}>
             <a href="">#{hash}</a>
           </span>
-        ))}
+        ))};
       </p>
       <button
         onClick={() => handelMarkAsRead(reading_time)}
