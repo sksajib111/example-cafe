@@ -21,7 +21,7 @@ const Blogs = ({ handelAddToBookmark, handelMarkAsRead }) => {
           handelAddToBookmark={handelAddToBookmark}
           handelMarkAsRead={handelMarkAsRead}
         ></Blog>
-      ))};
+      ))}
     </div>
   );
 };
