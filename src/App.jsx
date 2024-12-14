@@ -17,8 +17,11 @@ function App() {
   };
 
   // Reading time adding function
-  const handelMarkAsRead = (time) => {
+  const handelMarkAsRead = (id, time) => {
     setReadingTime(readingTime + time);
+    // remove reading book
+    const remainingBookMark = bookmarks.filter(bookmark => bookmark.id !== id);
+    setBookmarks(remainingBookMark);
   };
 
   return (
